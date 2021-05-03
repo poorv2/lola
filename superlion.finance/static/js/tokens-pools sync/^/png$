@@ -1,0 +1,50 @@
+var map = {
+	"./0.png": 514,
+	"./1-0.png": 515,
+	"./1-1.png": 1502,
+	"./1-2.png": 1503,
+	"./1.png": 1504,
+	"./10.png": 1505,
+	"./11.png": 1506,
+	"./12.png": 1507,
+	"./13.png": 1508,
+	"./14.png": 1509,
+	"./15.png": 1510,
+	"./16.png": 1511,
+	"./17.png": 1512,
+	"./18.png": 1513,
+	"./19.png": 1514,
+	"./2.png": 1515,
+	"./20.png": 1516,
+	"./21.png": 1517,
+	"./22.png": 1518,
+	"./23.png": 1519,
+	"./3.png": 1520,
+	"./4.png": 1521,
+	"./5.png": 1522,
+	"./6.png": 1523,
+	"./7.png": 1524,
+	"./8.png": 1525,
+	"./9.png": 1526
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) { // check for number or string
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return id;
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 1501;
